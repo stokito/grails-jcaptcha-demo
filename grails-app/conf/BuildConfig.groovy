@@ -1,16 +1,14 @@
-grails.servlet.version = "2.5" // Change depending on target container compliance (2.5 or 3.0)
+grails.servlet.version = '3.0' // Change depending on target container compliance (2.5 or 3.0)
 grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
+grails.project.work.dir = 'target'
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
-// uncomment (and adjust settings) to fork the JVM to isolate classpaths
-//grails.project.fork = [
-//   run: [maxMemory:1024, minMemory:64, debug:false, maxPerm:256]
-//]
-
+grails.project.dependency.resolver = 'maven'
+grails.plugin.location.'grails-jcaptcha' = '../grails-jcaptcha-plugin'
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
     inherits("global") {
@@ -51,12 +49,10 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        runtime ":hibernate:$grailsVersion"
-        runtime ":jquery:1.8.3"
-        runtime ":resources:1.1.6"
-        build ":tomcat:$grailsVersion"
-        runtime ":database-migration:1.3.2"
-        compile ':cache:1.0.1'
-        compile ':jcaptcha:1.2.1'
+        build(':tomcat:7.0.42')
+        runtime(':hibernate:3.6.10.2')
+        runtime(':jquery:1.10.2')
+        runtime(':resources:1.2')
+//        compile ':jcaptcha:1.3'
     }
 }
