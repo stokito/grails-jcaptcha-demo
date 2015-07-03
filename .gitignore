@@ -56,3 +56,9 @@
 .*
 !.gitignore
 *~
+./build/
+./gradle/
+/gradle/
+grails-jcaptcha-demo.iml
+gradle.properties
+/build/
