@@ -17,7 +17,7 @@ plugins {
 }
 
 version "0.1"
-group "grails.jcaptcha.demo3"
+group "org.grails.plugin.jcaptcha"
 
 apply plugin: "spring-boot"
 apply plugin: "war"
@@ -67,14 +67,20 @@ dependencies {
     compile "org.hibernate:hibernate-ehcache"
     compile "org.grails.plugins:grails-jcaptcha-plugin:2.0-SNAPSHOT"
 
+    //        compile 'com.octo.captcha:jcaptcha-extension-sound-freetts:1.0'
+/*
+    compile 'org.mobicents.external.freetts:freetts:1.0'
+    compile 'org.mobicents.external.freetts:cmu_time_awb:1.0'
+    compile 'org.mobicents.external.freetts:cmu_us_kal:1.0'
+    compile 'org.mobicents.external.freetts:cmudict04:1.0'
+    compile 'org.mobicents.external.freetts:cmulex:1.0'
+    compile 'org.mobicents.external.freetts:cmutimelex:1.0'
+    compile 'org.mobicents.external.freetts:en_us:1.0'
+*/
+
     runtime "org.grails.plugins:asset-pipeline"
-    runtime "org.grails.plugins:scaffolding"
 
     testCompile "org.grails:grails-plugin-testing"
-    testCompile "org.grails.plugins:geb"
-
-    // Note: It is recommended to update to a more robust driver (Chrome, Firefox etc.)
-    testRuntime 'org.seleniumhq.selenium:selenium-htmlunit-driver:2.44.0'
 
     console "org.grails:grails-console"
 }
